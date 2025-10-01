@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portofolio | FGP</title>
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <style>
+        /* CSS Reset and Basic Setup */
+        :root {
+            --primary-red-dark: #B71C1C;
+            --primary-red-light: #E53935;
+            --background-color: #fdfdfd;
+            --text-color: #333333;
+            --card-background: #ffffff;
+            --shadow-color: rgba(0, 0, 0, 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: var(--background-color);;
+            color: var(--text-color);
+            /* Pola Batik sebagai background yang halus */
+            background-image: url('data:image/svg+xml,%3Csvg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"%3E%3Cg fill="none" fill-rule="evenodd"%3E%3Cg fill="%23e0e0e0" fill-opacity="0.2"%3E%3Cpath d="M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z"/%3E%3C/g%3E%3C/g%3E%3C/svg%3E');
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        /* Header and Navigation Bar */
+        .header {
+            background-color: var(--card-background);
+            box-shadow: 0 2px 10px var(--shadow-color);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+
+        .nav-logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--primary-red-dark);
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-red-light);
+        }
+
+        .hamburger {
+            display: none;
+            cursor: pointer;
+        }
+        
+        .section-title{
+            margin-top: 4rem;
+        }
+
+        .bar {
+            display: block;
+            width: 25px;
+            height: 3px;
+            margin: 5px auto;
+            background-color: var(--text-color);
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hero Section */
+        #hero {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            min-height: 100vh;
+            padding-top: 70px; /* Offset for fixed header */
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        .hero-content h1 span {
+            /* Gradasi warna merah pada teks */
+            background: linear-gradient(45deg, var(--primary-red-dark), var(--primary-red-light));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto 2rem;
+            font-weight: 300;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 12px 28px;
+            background: linear-gradient(45deg, var(--primary-red-dark), var(--primary-red-light));
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(183, 28, 28, 0.25);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 6rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            font-weight: 600;
+        }
+
+        /* About Section */
+        .about-content {
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .about-image {
+            flex: 1;
+            max-width: 350px;
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px var(--shadow-color);
+        }
+        
+        .about-text {
+            flex: 2;
+        }
+        
+        .about-text h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .about-text p {
+            line-height: 1.8;
+            font-weight: 300;
+        }
+
+        /* Portfolio Section */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            box-shadow: 0 5px 25px var(--shadow-color);
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px var(--shadow-color);
+        }
+        
+        .project-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+
+        .project-info {
+            padding: 1.5rem;
+        }
+        
+        .project-info h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .project-info p {
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #f7f7f7;
+        }
+        
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 1rem;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
+        .contact-form button {
+            border: none;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--text-color);
+            color: #f0f0f0;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .social-links a {
+            color: #f0f0f0;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: var(--primary-red-light);
+        }
+        
+        /* Tablet Responsive */
+        @media (max-width: 1024px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+
+            .section-title {
+                font-size: 2.3rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.6rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+                gap: 1.5rem;
+            }
+
+            .project-info h3 {
+                font-size: 1.2rem;
+            }
+
+            .project-info p {
+                font-size: 0.85rem;
+            }
+        }
+
+        /* Mobile Responsive */
+        @media (max-width: 768px) {
+            .container {
+                padding: 0 1rem;
+            }
+
+            section {
+                padding: 4rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .about-content {
+                gap: 2rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.5rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+
+            .project-info {
+                padding: 1rem;
+            }
+
+            .project-info h3 {
+                font-size: 1.1rem;
+                margin-bottom: 0.3rem;
+            }
+
+            .project-info p {
+                font-size: 0.8rem;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                padding: 12px;
+                font-size: 0.9rem;
+            }
+
+            .cta-button {
+                padding: 10px 24px;
+                font-size: 0.9rem;
+            }
+
+            .hamburger {
+                display: block;
+            }
+
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: var(--card-background);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 20px var(--shadow-color);
+                gap: 0;
+            }
+
+            .nav-item {
+                padding: 1rem 0;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .about-content {
+                flex-direction: column;
+            }
+
+            .about-image {
+                margin-bottom: 2rem;
+            }
+        }
+
+        /* Small Mobile Responsive */
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 0.5rem;
+            }
+
+            section {
+                padding: 3rem 0;
+            }
+
+            .hero-content h1 {
+                font-size: 2rem;
+            }
+
+            .hero-content p {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+                margin-bottom: 1.5rem;
+            }
+
+            .about-text h3 {
+                font-size: 1.4rem;
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .project-info h3 {
+                font-size: 1rem;
+            }
+
+            .project-info p {
+                font-size: 0.75rem;
+            }
+
+            .contact-form input,
+            .contact-form textarea {
+                padding: 10px;
+                font-size: 0.85rem;
+            }
+
+            .cta-button {
+                padding: 8px 20px;
+                font-size: 0.85rem;
+            }
+
+            .footer {
+                padding: 1.5rem 0;
+            }
+
+            .social-links {
+                gap: 0.8rem;
+            }
+
+            .social-links a {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <nav class="navbar container">
+            <a href="#" class="nav-logo">Tamarell</a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#hero" class="nav-link">Beranda</a></li>
+                <li class="nav-item"><a href="#about" class="nav-link">Tentang</a></li>
+                <li class="nav-item"><a href="#portfolio" class="nav-link">Portofolio</a></li>
+                <li class="nav-item"><a href="#certificates" class="nav-link">Sertifikat</a></li>
+                <li class="nav-item"><a href="#contact" class="nav-link">Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content">
+                <h1>Saya <span class="highlight">Farrell Gaotama Putra</span></h1>
+                <p>Seorang Mahasiswa semester 3 Universitas Pendidikan Ganesha.</p>
+                <a href="#portfolio" class="cta-button">Lihat Karya Saya</a>
+                <a href="assets/images/CV.png" download class="cta-button">Download Resume</a>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="container">
+            <h2 class="section-title">Tentang <span class="highlight">Saya</span></h2>
+            <div class="about-content">
+                <div class="about-image">
+                    <!-- Ganti 'src' dengan URL foto Anda -->
+                    <img src="assets/images/_DSF8188.JPG" alt="Foto profil Anda">
+                </div>
+                <div class="about-text">
+                    <h3>Siapa Saya?</h3>
+                    <p>
+                        Saya adalah mahasiswa aktif semester 3 dari Universitas Pendidikan Ganesha. Di perkuliahan semester 3 ini saya berkesempatan untuk bergabung di salah satu ormawa yang ada di Fakultas Teknik dan Kejuruan yaitu BEM FTK.                        <br><br>
+                        Mungkin aku kelihatannya agak pendiam karena aku memang seorang introvert, dan ini adalah dunia baru buatku. Aku merasa saat ini aku masih dalam proses mengeksplorasi dan mencari tahu apa passion-ku. Karena itu, aku memberanikan diri bergabung di sini dengan harapan bisa keluar dari zona nyaman, dapat banyak wawasan, dan menemukan hal-hal yang aku sukai.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Portfolio Section -->
+        <section id="portfolio" class="container">
+            <h2 class="section-title">Portofolio</h2>
+            <div class="portfolio-grid">
+                <!-- Proyek 2 -->
+                <div class="project-card">
+                    <img src="assets/images/KUBIIBOOM.png" alt="Gambar Proyek 2">
+                    <div class="project-info">
+                        <h3>Kubiiboom</h3>
+                        <p>Ini adalah Proyek UAS saat saya duduk di bangku kelas 12, yang dimana proyek ini dikerjakan secara berkelompok dan saya berperan sebagai supplier di tim.</p>
+                    </div>
+                </div>
+                 <!-- Proyek 1 -->
+                <div class="project-card">
+                    <!-- Ganti 'src' dengan gambar proyek Anda -->
+                    <img src="assets/images/PROYEK BASDAT.png" alt="Gambar Proyek 1">
+                    <div class="project-info">
+                        <h3>Unity VR</h3>
+                        <p>Ini adalah Proyek UAS dari mata kuliah Basis Data, yang dimana proyek ini dikerjakan dalam kelompok 2 orang dan dikerjakan selama 2 hari.</p>
+                    </div>
+                </div>
+               
+                <!-- Proyek 3 -->
+                <div class="project-card">
+                    <img src="assets/images/DIES BOOTH.jpg" alt="Gambar Proyek 3">
+                    <div class="project-info">
+                        <h3>Stand DIES NATALIS FTK</h3>
+                        <p>Ini adalah Proyek saat saya mengikuti kepanitiaan FTK di DIES NATALIS 2025, yang dimana saat itu kami membuat gapura untuk stand FTK .</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="container">
+            <h2 class="section-title">Sertifikat Saya</h2>
+            <div class="portfolio-grid">
+                <!-- Sertifikat 1 -->
+                <div class="project-card">
+                    <!-- Ganti 'src' dengan gambar sertifikat Anda -->
+                    <img src="assets/images/DICODING MANPRO.png" alt="Gambar Sertifikat 1">
+                    <div class="project-info">
+                        <h3>Belajar Dasar Manajemen Proyek</h3>
+                        <p>Dicoding</p>
+                    </div>
+                </div>
+                <!-- Sertifikat 2 -->
+                <div class="project-card">
+                    <img src="assets/images/DICODING PEMC.png" alt="Gambar Sertifikat 2">
+                    <div class="project-info">
+                        <h3>Memulai Pemograman Dengan C</h3>
+                        <p>Dicoding</p>
+                    </div>
+                </div>
+                <!-- Sertifikat 3 -->
+                <div class="project-card">
+                    <img src="assets/images/DICODING PEMJAV.png" alt="Gambar Sertifikat 3">
+                    <div class="project-info">
+                        <h3>Memulai Pemograman Dengan Java</h3>           
+                        <p>Dicoding</p>
+                    </div>
+                </div>
+                <!-- Sertifikat 8 -->
+                <div class="project-card">
+                    <img src="assets/images/OKF.png" alt="Gambar Sertifikat 8">
+                    <div class="project-info">
+                        <h3>Production and Safety Coordinator</h3>           
+                        <p>BEM FTK UNDIKSHA</p>
+                    </div>
+                </div>
+                  <!-- Sertifikat 9 -->
+                <div class="project-card">
+                    <img src="assets/images/ID.png" alt="Gambar Sertifikat 9">
+                    <div class="project-info">
+                        <h3>Production and Safety Coordinator</h3>           
+                        <p>BEM FTK UNDIKSHA</p>
+                    </div>
+                </div>
+                  <!-- Sertifikat 10 -->
+                <div class="project-card">
+                    <img src="assets/images/BAKSOS.jpg" alt="Gambar Sertifikat 10">
+                    <div class="project-info">
+                        <h3>Treasure 2</h3>           
+                        <p>BEM FTK UNDIKSHA</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+                
+        <!-- Contact Section -->
+        <section id="contact">
+            <div class="container">
+                <h2 class="section-title">Hubungi Saya</h2>
+                <form class="contact-form"
+                    action="https://formspree.io/f/mvgwajjv"
+                    method="POST"
+                >
+
+                    <input type="text" name="name" placeholder="Nama Anda" required>
+                    <input type="email" name="email" placeholder="Email Anda" required>
+                    <textarea name="message" placeholder="Pesan Anda" required></textarea>
+                    <button type="submit" class="cta-button">Kirim Pesan</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="social-links">
+            <a href="https://www.instagram.com/farrell.gp/" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/farrell-gaotama-putra-947320387/" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            <a href="mailto:rellrus28@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.tiktok.com/@frizly13" target="_blank" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="https://wa.me/081933009336" target="_blank" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+        </div>
+        <p>&copy; 2025 Farrell Gaotama Putra</p>
+    </footer>
+
+    <script>
+        // JavaScript untuk menu hamburger
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        const navLinks = document.querySelectorAll(".nav-link");
+
+        // Buka/tutup menu saat ikon hamburger diklik
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+
+        // Tutup menu saat salah satu link di dalam menu diklik
+        navLinks.forEach(link => {
+            link.addEventListener("click", () => {
+                hamburger.classList.remove("active");
+                navMenu.classList.remove("active");
+            });
+        });
+    </script>
+
+</body>
+</html>
+
